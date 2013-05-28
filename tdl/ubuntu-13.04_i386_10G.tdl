@@ -1,0 +1,24 @@
+<template>
+ <name>ubuntu-13.04-i386</name>
+ <description>Ubuntu 13.04 10GB template</description>
+ <disk>
+   <size>10</size>
+ </disk>
+ <os>
+  <name>Ubuntu</name>
+  <version>13.04</version>
+  <arch>i386</arch>
+  <rootpw>exoscale2013</rootpw>
+  <install type='iso'>
+    <iso>http://releases.ubuntu.com/13.04/ubuntu-13.04-server-i386.iso</iso>
+  </install>
+ </os>
+ <commands>
+    <command name='postconfig'>
+wget http://deploy.own3d.ch/ubuntu-master-config-1304.sh
+mv ubuntu-master-config-1304.sh /tmp
+chmod +x /tmp/ubuntu-master-config-1304.sh
+/tmp/ubuntu-master-config-1304.sh
+    </command>
+ </commands>
+</template>

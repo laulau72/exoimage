@@ -1,0 +1,24 @@
+<template>
+ <name>centos63</name>
+ <description>CentOS 6.3 i386 template</description>
+ <disk>
+   <size>10</size>
+ </disk>
+ <os>
+  <name>CentOS-6</name>
+  <version>0</version>
+  <arch>i386</arch>
+  <rootpw>exoscale2013</rootpw>
+  <install type='url'>
+    <url>http://mirror.rackspace.com/centos/6/os/i386/</url>
+  </install>
+ </os>
+ <commands>
+    <command name='config'>
+wget http://deploy.own3d.ch/centos-master-config-63.sh
+mv centos-master-config-63.sh /tmp
+chmod +x /tmp/centos-master-config-63.sh
+/tmp/centos-master-config-63.sh
+    </command>
+ </commands>
+</template>

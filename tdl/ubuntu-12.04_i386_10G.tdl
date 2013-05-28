@@ -1,0 +1,30 @@
+<template>
+ <name>ubuntu-i386-10G</name>
+ <description>Ubuntu 12.04 10GB template</description>
+ <disk>
+   <size>10</size>
+ </disk>
+ <os>
+  <name>Ubuntu</name>
+  <version>12.04</version>
+  <arch>i386</arch>
+  <rootpw>exoscale2013</rootpw>
+  <install type='iso'>
+    <iso>http://releases.ubuntu.com/12.04/ubuntu-12.04.2-server-i386.iso</iso>
+  </install>
+ </os>
+ <commands>
+    <command name='getcfg'>
+wget http://deploy.own3d.ch/ubuntu-master-config-1204.sh
+    </command>
+    <command name='mvcfg'>
+mv ubuntu-master-config-1204.sh /tmp
+    </command>
+    <command name='setcfg'>
+chmod +x /tmp/ubuntu-master-config-1204.sh
+    </command>
+    <command name='runcfg'>
+/tmp/ubuntu-master-config-1204.sh
+    </command>
+ </commands>
+</template>
